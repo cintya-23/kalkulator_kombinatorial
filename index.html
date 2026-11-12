@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Kombinatorial</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">C</div>
+        <div>
+          <h2>Kombinatorial</h2>
+          <span>Media Pembelajaran</span>
+        </div>
+      </div>
+
+      <p class="menu-label">MENU UTAMA</p>
+
+      <nav>
+        <a
+          href="#"
+          class="nav-link active"
+          onclick="
+            showPage('beranda', this);
+            return false;
+          "
+        >
+          <span class="nav-icon">⌂</span>
+          Beranda
+        </a>
+
+        <a
+          href="#"
+          class="nav-link"
+          onclick="
+            showPage('materi', this);
+            return false;
+          "
+        >
+          <span class="nav-icon">▤</span>
+          Materi
+        </a>
+
+        <a
+          href="#"
+          class="nav-link"
+          onclick="
+            showPage('kalkulator', this);
+            return false;
+          "
+        >
+          <span class="nav-icon">∑</span>
+          Kalkulator
+        </a>
+
+        <a
+          href="#"
+          class="nav-link"
+          onclick="
+            showPage('latihan', this);
+            return false;
+          "
+        >
+          <span class="nav-icon">✎</span>
+          Latihan Soal
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="side-note">
+          <span>✦</span>
+          <p>Belajar sedikit demi sedikit, pahami setiap konsep.</p>
+        </div>
+        <small>Matematika Diskrit</small>
+      </div>
+    </aside>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main-content">
+      <!-- HALAMAN BERANDA -->
+      <section id="beranda" class="page active">
+        <div class="hero">
+          <div class="hero-text">
+            <span class="eyebrow">MEDIA PEMBELAJARAN</span>
+
+            <h1>Belajar<br /><span>Kombinatorial</span></h1>
+
+            <p>
+              Mengenal konsep kombinatorial, memahami kombinasi, dan belajar
+              menghitung kombinasi dengan mudah.
+            </p>
+
+            <button class="primary-btn" onclick="bukaHalaman('materi')">
+              Mulai Belajar <span>→</span>
+            </button>
+          </div>
+
+          <div class="hero-art">
+            <div class="art-circle">
+              <div class="art-card">
+                <span class="art-symbol">C(n,r)</span>
+                <span class="art-line"></span>
+                <span class="art-small">KOMBINASI</span>
+              </div>
+              <div class="floating-dot dot-one"></div>
+              <div class="floating-dot dot-two"></div>
+              <div class="floating-dot dot-three"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="welcome-card">
+          <span class="eyebrow">SELAMAT DATANG</span>
+          <h2>Mulai Perjalanan Belajarmu</h2>
+          <p>
+            Website ini menyediakan materi, kalkulator kombinasi, dan latihan
+            soal untuk membantu memahami konsep kombinatorial.
+          </p>
+          <button class="text-btn" onclick="bukaHalaman('materi')">
+            Pelajari Materi <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- HALAMAN MATERI -->
+      <section id="materi" class="page">
+        <div class="section-heading">
+          <span class="eyebrow">PELAJARI KONSEPNYA</span>
+          <h2>Materi Kombinatorial</h2>
+          <p>Kenali pengertian dan rumus kombinasi sebelum mencoba latihan.</p>
+        </div>
+
+        <div class="content-card">
+          <div class="number-label">01</div>
+          <div>
+            <h3>Pengertian Kombinatorial</h3>
+            <p>
+              Kombinatorial merupakan salah satu cabang matematika yang
+              mempelajari cara menghitung banyaknya kemungkinan pemilihan atau
+              susunan objek dari sejumlah objek yang tersedia.
+            </p>
+            <p>
+              Kombinatorial dapat digunakan untuk menyelesaikan berbagai
+              permasalahan yang berkaitan dengan pemilihan beberapa objek dari
+              sekumpulan objek.
+            </p>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <div class="number-label">02</div>
+          <div>
+            <h3>Kombinasi</h3>
+            <p>
+              Kombinasi adalah cara memilih sejumlah objek dari sekumpulan objek
+              tanpa memperhatikan urutan. Artinya, pemilihan A kemudian B
+              dianggap sama dengan pemilihan B kemudian A.
+            </p>
+
+            <div class="formula-box">
+              <span>RUMUS KOMBINASI</span>
+              <strong>C(n,r) = n! / (r! × (n-r)!)</strong>
+            </div>
+
+            <h4>Keterangan:</h4>
+            <ul class="explanation-list">
+              <li><strong>n</strong> = jumlah seluruh objek</li>
+              <li><strong>r</strong> = jumlah objek yang dipilih</li>
+              <li><strong>!</strong> = faktorial</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-card">
+          <div class="number-label">03</div>
+          <div>
+            <h3>Contoh Perhitungan</h3>
+            <p>
+              Dari 5 siswa akan dipilih 2 siswa sebagai perwakilan kelas. Berapa
+              banyak cara pemilihannya?
+            </p>
+
+            <div class="calculation">
+              C(5,2) = 5! / (2! × 3!)<br />
+              = (5 × 4) / (2 × 1)<br />
+              = 10 cara
+            </div>
+
+            <p class="answer-note">
+              Jadi, terdapat <strong>10 cara</strong> untuk memilih 2 siswa dari
+              5 siswa.
+            </p>
+          </div>
+        </div>
+
+        <div class="page-navigation">
+          <span>Selanjutnya: Kalkulator Kombinasi</span>
+          <button class="primary-btn" onclick="bukaHalaman('kalkulator')">
+            Lanjutkan <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- HALAMAN KALKULATOR -->
+      <section id="kalkulator" class="page">
+        <div class="section-heading">
+          <span class="eyebrow">COBA HITUNG SENDIRI</span>
+          <h2>Kalkulator Kombinasi</h2>
+          <p>
+            Masukkan nilai n dan r untuk mendapatkan hasil perhitungan
+            kombinasi.
+          </p>
+        </div>
+
+        <div class="calculator-card">
+          <div class="calculator-intro">
+            <div class="calculator-icon">∑</div>
+            <h3>Hitung Kombinasi</h3>
+            <p>
+              Gunakan rumus kombinasi untuk menghitung hasilnya secara otomatis.
+            </p>
+          </div>
+
+          <div class="calculator-inputs">
+            <div class="input-group">
+              <label for="nilaiN"> Jumlah seluruh objek (n) </label>
+              <input
+                type="number"
+                id="nilaiN"
+                placeholder="Contoh: 10"
+                min="0"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="nilaiR"> Jumlah objek yang dipilih (r) </label>
+              <input
+                type="number"
+                id="nilaiR"
+                placeholder="Contoh: 3"
+                min="0"
+              />
+            </div>
+          </div>
+
+          <button class="primary-btn calculate-btn" onclick="hitungKombinasi()">
+            Hitung Kombinasi →
+          </button>
+
+          <div id="hasil" class="calculator-result">
+            Hasil perhitungan akan muncul di sini.
+          </div>
+        </div>
+
+        <div class="page-navigation">
+          <button class="secondary-btn" onclick="bukaHalaman('materi')">
+            ← Kembali ke Materi
+          </button>
+
+          <button class="primary-btn" onclick="bukaHalaman('latihan')">
+            Lanjut ke Latihan <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- HALAMAN LATIHAN SOAL -->
+      <section id="latihan" class="page">
+        <div class="section-heading">
+          <span class="eyebrow">UJI PEMAHAMANMU</span>
+          <h2>Latihan Soal</h2>
+          <p>
+            Kerjakan lima soal berikut secara mandiri. Masukkan jawaban berupa
+            angka, kemudian periksa hasilnya.
+          </p>
+        </div>
+
+        <div class="quiz-progress">
+          <div>
+            <strong>5 Soal Latihan</strong>
+            <span>Kerjakan satu per satu</span>
+          </div>
+          <div class="quiz-tag">Kombinasi</div>
+        </div>
+
+        <!-- SOAL 1 -->
+        <div class="question-card">
+          <div class="question-top">
+            <span class="question-number">SOAL 01</span>
+            <span class="question-type">Kombinasi</span>
+          </div>
+
+          <h3>Memilih Perwakilan Kelas</h3>
+          <p>
+            Dari 6 orang siswa akan dipilih 2 orang untuk menjadi perwakilan
+            kelas. Berapa banyak cara pemilihan yang dapat dilakukan?
+          </p>
+
+          <div class="question-formula">C(6, 2) = ?</div>
+
+          <label for="jawaban1">Jawaban kamu</label>
+          <div class="answer-input">
+            <input type="number" id="jawaban1" placeholder="Masukkan jawaban" />
+            <button onclick="periksaLatihan(1)">Periksa Jawaban</button>
+          </div>
+
+          <div id="hasil1" class="quiz-feedback"></div>
+        </div>
+
+        <!-- SOAL 2 -->
+        <div class="question-card">
+          <div class="question-top">
+            <span class="question-number">SOAL 02</span>
+            <span class="question-type">Kombinasi</span>
+          </div>
+
+          <h3>Memilih Anggota Tim</h3>
+          <p>
+            Sebuah kelompok terdiri dari 8 mahasiswa. Jika akan dipilih 3
+            mahasiswa sebagai anggota tim, berapa banyak kombinasi yang mungkin?
+          </p>
+
+          <div class="question-formula">C(8, 3) = ?</div>
+
+          <label for="jawaban2">Jawaban kamu</label>
+          <div class="answer-input">
+            <input type="number" id="jawaban2" placeholder="Masukkan jawaban" />
+            <button onclick="periksaLatihan(2)">Periksa Jawaban</button>
+          </div>
+
+          <div id="hasil2" class="quiz-feedback"></div>
+        </div>
+
+        <!-- SOAL 3 -->
+        <div class="question-card">
+          <div class="question-top">
+            <span class="question-number">SOAL 03</span>
+            <span class="question-type">Kombinasi</span>
+          </div>
+
+          <h3>Memilih Peserta Lomba</h3>
+          <p>
+            Dari 10 peserta lomba akan dipilih 4 orang untuk mengikuti babak
+            berikutnya. Berapa banyak cara pemilihannya?
+          </p>
+
+          <div class="question-formula">C(10, 4) = ?</div>
+
+          <label for="jawaban3">Jawaban kamu</label>
+          <div class="answer-input">
+            <input type="number" id="jawaban3" placeholder="Masukkan jawaban" />
+            <button onclick="periksaLatihan(3)">Periksa Jawaban</button>
+          </div>
+
+          <div id="hasil3" class="quiz-feedback"></div>
+        </div>
+
+        <!-- SOAL 4 -->
+        <div class="question-card">
+          <div class="question-top">
+            <span class="question-number">SOAL 04</span>
+            <span class="question-type">Kombinasi</span>
+          </div>
+
+          <h3>Memilih Buku</h3>
+          <p>
+            Terdapat 12 buku berbeda. Jika seseorang ingin memilih 5 buku dari
+            seluruh buku tersebut, berapa banyak kombinasi pilihan yang dapat
+            dibuat?
+          </p>
+
+          <div class="question-formula">C(12, 5) = ?</div>
+
+          <label for="jawaban4">Jawaban kamu</label>
+          <div class="answer-input">
+            <input type="number" id="jawaban4" placeholder="Masukkan jawaban" />
+            <button onclick="periksaLatihan(4)">Periksa Jawaban</button>
+          </div>
+
+          <div id="hasil4" class="quiz-feedback"></div>
+        </div>
+
+        <!-- SOAL 5 -->
+        <div class="question-card">
+          <div class="question-top">
+            <span class="question-number">SOAL 05</span>
+            <span class="question-type">Kombinasi</span>
+          </div>
+
+          <h3>Memilih Anggota Kelompok</h3>
+          <p>
+            Dari 7 orang mahasiswa akan dipilih 3 orang untuk membentuk sebuah
+            kelompok. Berapa banyak kombinasi kelompok yang dapat dibentuk?
+          </p>
+
+          <div class="question-formula">C(7, 3) = ?</div>
+
+          <label for="jawaban5">Jawaban kamu</label>
+          <div class="answer-input">
+            <input type="number" id="jawaban5" placeholder="Masukkan jawaban" />
+            <button onclick="periksaLatihan(5)">Periksa Jawaban</button>
+          </div>
+
+          <div id="hasil5" class="quiz-feedback"></div>
+        </div>
+
+        <div class="page-navigation">
+          <button class="secondary-btn" onclick="bukaHalaman('kalkulator')">
+            ← Kembali ke Kalkulator
+          </button>
+
+          <button class="primary-btn" onclick="bukaHalaman('beranda')">
+            Kembali ke Beranda
+          </button>
+        </div>
+      </section>
+
+      <footer>
+        <p>Belajar Kombinatorial</p>
+        <span>Media Pembelajaran Matematika Diskrit</span>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
