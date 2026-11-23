@@ -204,68 +204,73 @@
         </div>
       </section>
 
-      <!-- HALAMAN KALKULATOR -->
-      <section id="kalkulator" class="page">
-        <div class="section-heading">
-          <span class="eyebrow">COBA HITUNG SENDIRI</span>
-          <h2>Kalkulator Kombinasi</h2>
-          <p>
-            Masukkan nilai n dan r untuk mendapatkan hasil perhitungan
-            kombinasi.
-          </p>
-        </div>
+      
+<!-- HALAMAN KALKULATOR -->
+<section id="kalkulator" class="page">
+    <div class="section-heading">
+        <span class="eyebrow">COBA HITUNG SENDIRI</span>
+        <h2>Kalkulator Kombinasi</h2>
+        <p>
+            Masukkan nilai n dan r untuk mendapatkan hasil
+            sekaligus langkah-langkah perhitungannya.
+        </p>
+    </div>
 
-        <div class="calculator-card">
-          <div class="calculator-intro">
+    <div class="calculator-card">
+        <div class="calculator-intro">
             <div class="calculator-icon">∑</div>
             <h3>Hitung Kombinasi</h3>
             <p>
-              Gunakan rumus kombinasi untuk menghitung hasilnya secara otomatis.
+                Masukkan angka sesuai soal yang ingin kamu hitung.
             </p>
-          </div>
+        </div>
 
-          <div class="calculator-inputs">
+        <div class="calculator-inputs">
             <div class="input-group">
-              <label for="nilaiN"> Jumlah seluruh objek (n) </label>
-              <input
-                type="number"
-                id="nilaiN"
-                placeholder="Contoh: 10"
-                min="0"
-              />
+                <label for="nilaiN">
+                    Jumlah seluruh objek (n)
+                </label>
+                <input type="number" id="nilaiN"
+                    placeholder="Contoh: 5" min="0">
             </div>
 
             <div class="input-group">
-              <label for="nilaiR"> Jumlah objek yang dipilih (r) </label>
-              <input
-                type="number"
-                id="nilaiR"
-                placeholder="Contoh: 3"
-                min="0"
-              />
+                <label for="nilaiR">
+                    Jumlah objek yang dipilih (r)
+                </label>
+                <input type="number" id="nilaiR"
+                    placeholder="Contoh: 2" min="0">
             </div>
-          </div>
+        </div>
 
-          <button class="primary-btn calculate-btn" onclick="hitungKombinasi()">
+        <button class="primary-btn calculate-btn"
+            onclick="hitungKombinasi()">
             Hitung Kombinasi →
-          </button>
+        </button>
 
-          <div id="hasil" class="calculator-result">
+        <!-- HASIL AKHIR -->
+        <div id="hasil" class="calculator-result">
             Hasil perhitungan akan muncul di sini.
-          </div>
         </div>
 
-        <div class="page-navigation">
-          <button class="secondary-btn" onclick="bukaHalaman('materi')">
+        <!-- LANGKAH PERHITUNGAN -->
+        <div id="langkahPerhitungan" class="steps-result"
+             style="display: none;">
+        </div>
+    </div>
+
+    <div class="page-navigation">
+        <button class="secondary-btn"
+            onclick="bukaHalaman('materi')">
             ← Kembali ke Materi
-          </button>
+        </button>
 
-          <button class="primary-btn" onclick="bukaHalaman('latihan')">
-            Lanjut ke Latihan <span>→</span>
-          </button>
-        </div>
-      </section>
-
+        <button class="primary-btn"
+            onclick="bukaHalaman('latihan')">
+            Lanjut ke Latihan →
+        </button>
+    </div>
+</section>
       <!-- HALAMAN LATIHAN SOAL -->
       <section id="latihan" class="page">
         <div class="section-heading">
