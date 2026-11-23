@@ -844,3 +844,80 @@ footer span {
     flex-wrap: wrap;
   }
 }
+
+
+/* LANGKAH PERHITUNGAN KALKULATOR */
+
+.steps-result {
+    margin-top: 22px;
+    padding: 25px;
+    background: #f1edf3;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    animation: muncul 0.35s ease;
+}
+
+.steps-result h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--purple-dark);
+}
+
+.step-description {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.step-number {
+    min-width: 29px;
+    height: 29px;
+    background: var(--purple-light);
+    color: var(--purple-dark);
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.step-item strong {
+    font-size: 13px;
+}
+
+.step-math {
+    margin-top: 10px;
+    padding: 13px;
+    background: var(--card-dark);
+    color: var(--purple-dark);
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.final-math {
+    font-size: 20px;
+    color: var(--success);
+}
+
+.step-conclusion {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #e2ece3;
+    color: var(--success);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
