@@ -52,48 +52,130 @@ function faktorial(angka) {
    KALKULATOR KOMBINASI
 ========================== */
 
+
 function hitungKombinasi() {
-  let n = document.getElementById("nilaiN").value;
-  let r = document.getElementById("nilaiR").value;
-  let hasil = document.getElementById("hasil");
+    let n = document.getElementById("nilaiN").value;
+    let r = document.getElementById("nilaiR").value;
 
-  if (n === "" || r === "") {
-    hasil.innerHTML = "Silakan isi kedua angka terlebih dahulu.";
-    return;
-  }
+    let hasil = document.getElementById("hasil");
+    let langkah = document.getElementById("langkahPerhitungan");
 
-  n = Number(n);
-  r = Number(r);
+    // Memeriksa input
+    if (n === "" || r === "") {
+        hasil.innerHTML = "Silakan isi kedua angka terlebih dahulu.";
+        langkah.style.display = "none";
+        return;
+    }
 
-  if (
-    !Number.isSafeInteger(n) ||
-    !Number.isSafeInteger(r) ||
-    n < 0 ||
-    r < 0 ||
-    r > n
-  ) {
+    n = Number(n);
+    r = Number(r);
+
+    if (
+        !Number.isSafeInteger(n) ||
+        !Number.isSafeInteger(r) ||
+        n < 0 || r < 0 || r > n
+    ) {
+        hasil.innerHTML =
+            "Input tidak valid. Pastikan n dan r berupa bilangan bulat nonnegatif serta r tidak lebih besar dari n.";
+
+        langkah.style.display = "none";
+        return;
+    }
+
+    if (n > 1000) {
+        hasil.innerHTML = "Nilai n maksimal adalah 1000.";
+        langkah.style.display = "none";
+        return;
+    }
+
+    // Menghitung kombinasi
+    let pembilang = faktorial(n);
+    let penyebut = faktorial(r) * faktorial(n - r);
+    let hasilAkhir = pembilang / penyebut;
+
+    // Membuat daftar angka pada pembilang
+    let angkaAtas = [];
+
+    for (let i = n; i > n - r; i--) {
+        angkaAtas.push(i);
+    }
+
+    let bentukAtas = angkaAtas.length > 0
+        ? angkaAtas.join(" × ")
+        : "1";
+
+    // Membuat daftar angka pada penyebut
+    let angkaBawah = [];
+
+    for (let i = r; i >= 1; i--) {
+        angkaBawah.push(i);
+    }
+
+    let bentukBawah = angkaBawah.length > 0
+        ? angkaBawah.join(" × ")
+        : "1";
+
+    // Menampilkan hasil akhir
     hasil.innerHTML =
-      "Input tidak valid. Pastikan n dan r berupa bilangan bulat nonnegatif serta r tidak lebih besar dari n.";
-    return;
-  }
+        "Hasil kombinasi C(" + n + ", " + r + ") = " +
+        "<strong>" + hasilAkhir.toString() + " cara</strong>";
 
-  if (n > 1000) {
-    hasil.innerHTML = "Nilai n maksimal adalah 1000.";
-    return;
-  }
+    // Menampilkan langkah perhitungan
+    langkah.style.display = "block";
 
-  let pembilang = faktorial(n);
-  let penyebut = faktorial(n - r) * faktorial(r);
-  let hasilAkhir = pembilang / penyebut;
+    langkah.innerHTML = `
+        <h3>Langkah-langkah Perhitungan</h3>
 
-  hasil.innerHTML =
-    "Hasil kombinasi C(" +
-    n +
-    "," +
-    r +
-    ") = <strong>" +
-    hasilAkhir.toString() +
-    "</strong>";
+        <p class="step-description">
+            Berikut proses menghitung kombinasi
+            C(${n}, ${r}).
+        </p>
+
+        <div class="step-item">
+            <span class="step-number">1</span>
+            <div>
+                <strong>Gunakan rumus kombinasi</strong>
+                <div class="step-math">
+                    C(n,r) = n! / (r! × (n-r)!)
+                </div>
+            </div>
+        </div>
+
+        <div class="step-item">
+            <span class="step-number">2</span>
+            <div>
+                <strong>Masukkan nilai n dan r</strong>
+                <div class="step-math">
+                    C(${n},${r}) = ${n}! / (${r}! × ${n-r}!)
+                </div>
+            </div>
+        </div>
+
+        <div class="step-item">
+            <span class="step-number">3</span>
+            <div>
+                <strong>Sederhanakan faktorial</strong>
+                <div class="step-math">
+                    = (${bentukAtas}) / (${bentukBawah})
+                </div>
+            </div>
+        </div>
+
+        <div class="step-item">
+            <span class="step-number">4</span>
+            <div>
+                <strong>Hitung hasilnya</strong>
+                <div class="step-math final-math">
+                    = ${hasilAkhir.toString()}
+                </div>
+            </div>
+        </div>
+
+        <div class="step-conclusion">
+            Jadi, hasil kombinasi C(${n},${r}) adalah
+            <strong>${hasilAkhir.toString()} cara.</strong>
+        </div>
+    `;
 }
 
 /* ==========================
